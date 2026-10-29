@@ -49,6 +49,8 @@ $window.FindName('Settings').Add_Click({Start-Process 'ms-settings:personalizati
 $window.FindName('Restore').Add_Click({
   $result=[System.Windows.MessageBox]::Show('Vratiti spremljene postavke prije BrenOS instalacije?','BrenOS','YesNo','Question')
   if ($result -eq 'Yes') {
+    & (Join-Path $root 'scripts\Restore-Cleanup.ps1')
+    & (Join-Path $root 'scripts\Restore-Shortcuts.ps1')
     & (Join-Path $root 'scripts\Restore-BrenOS.ps1')
     [System.Windows.MessageBox]::Show('Prethodne postavke su vracene.','BrenOS') | Out-Null
     $window.Close()
