@@ -85,7 +85,7 @@ if ([IO.Path]::GetFullPath($assets) -ne [IO.Path]::GetFullPath((Join-Path $targe
 }
 $targetScripts=Join-Path $target 'scripts'
 New-Item -Path $targetScripts -ItemType Directory -Force | Out-Null
-foreach ($name in @('Restore-BrenOS.ps1','BrenOS-Center.ps1','Install-BrenOS.ps1')) {
+foreach ($name in @('Restore-BrenOS.ps1','Restore-Cleanup.ps1','Safe-Cleanup.ps1','BrenOS-Center.ps1','Install-BrenOS.ps1')) {
     $src=Join-Path $PSScriptRoot $name
     $dst=Join-Path $targetScripts $name
     if ([IO.Path]::GetFullPath($src) -ne [IO.Path]::GetFullPath($dst)) {
@@ -93,8 +93,8 @@ foreach ($name in @('Restore-BrenOS.ps1','BrenOS-Center.ps1','Install-BrenOS.ps1
     }
 }
 New-Item -Path $personal -Force | Out-Null
-Set-ItemProperty -Path $personal -Name AppsUseLightTheme -Type DWord -Value 0
-Set-ItemProperty -Path $personal -Name SystemUsesLightTheme -Type DWord -Value 0
+New-ItemProperty -Path $personal -Name AppsUseLightTheme -PropertyType DWord -Value 0 -Force | Out-Null
+New-ItemProperty -Path $personal -Name SystemUsesLightTheme -PropertyType DWord -Value 0 -Force | Out-Null
 Set-ItemProperty -Path $desktop -Name WallpaperStyle -Value '10'
 Set-ItemProperty -Path $desktop -Name TileWallpaper -Value '0'
 $wall=Join-Path $targetAssets ("generated\wallpapers\BrenOS-$Wallpaper.jpg")
