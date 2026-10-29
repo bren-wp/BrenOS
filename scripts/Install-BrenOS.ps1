@@ -85,7 +85,7 @@ if ([IO.Path]::GetFullPath($assets) -ne [IO.Path]::GetFullPath((Join-Path $targe
 }
 $targetScripts=Join-Path $target 'scripts'
 New-Item -Path $targetScripts -ItemType Directory -Force | Out-Null
-foreach ($name in @('Restore-BrenOS.ps1','Restore-Cleanup.ps1','Safe-Cleanup.ps1','BrenOS-Center.ps1','Install-BrenOS.ps1')) {
+foreach ($name in @('Restore-BrenOS.ps1','Restore-Cleanup.ps1','Safe-Cleanup.ps1','Restore-Shortcuts.ps1','Install-Shortcuts.ps1','BrenOS-Center.ps1','Install-BrenOS.ps1')) {
     $src=Join-Path $PSScriptRoot $name
     $dst=Join-Path $targetScripts $name
     if ([IO.Path]::GetFullPath($src) -ne [IO.Path]::GetFullPath($dst)) {
