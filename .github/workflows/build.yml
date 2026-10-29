@@ -1,0 +1,84 @@
+name: Build BrenOS
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  assets:
+    name: Build and validate original graphics
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: tools/requirements.txt
+      - run: pip install -r tools/requirements.txt
+      - run: python tools/build_assets.py
+      - run: python tools/test_assets.py
+      - name: Package Windows installer
+        shell: bash
+        run: |
+          mkdir -p dist/BrenOS-1.0/assets
+          cp *.cmd LICENSE README.md dist/BrenOS-1.0/
+          cp -R scripts docs dist/BrenOS-1.0/
+          cp -R assets/generated assets/source dist/BrenOS-1.0/assets/
+          (cd dist && zip -qr -9 BrenOS-1.0-Windows11.zip BrenOS-1.0)
+          (cd dist && sha256sum BrenOS-1.0-Windows11.zip > SHA256SUMS.txt)
+      - uses: actions/upload-artifact@v4
+        with:
+          name: BrenOS-1.0-Windows11
+          path: |
+            dist/BrenOS-1.0-Windows11.zip
+            dist/SHA256SUMS.txt
+          retention-days: 30
+  windows-validation:
+    name: Validate PowerShell compatibility
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Windows PowerShell 5.1 parser
+        shell: powershell
+        run: |
+          $ErrorActionPreference='Stop'
+          $failures=0
+          Get-ChildItem scripts -Filter '*.ps1' -Recurse | ForEach-Object {
+            $tokens=$null
+            $errors=$null
+            [void][System.Management.Automation.Language.Parser]::ParseFile($_.FullName,[ref]$tokens,[ref]$errors)
+            foreach($issue in $errors) {
+              Write-Host ("{0}: {1}" -f $_.Name,$issue.Message)
+              $failures++
+            }
+          }
+          if ($failures) { throw ("{0} PowerShell parse errors" -f $failures) }
+          Write-Host 'All PowerShell scripts parse in Windows PowerShell 5.1.'
+  release:
+    name: Publish easy installer
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    needs: [assets, windows-validation]
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: BrenOS-1.0-Windows11
+          path: dist
+      - name: Publish v1.0.0 when not already released
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          if gh release view v1.0.0 >/dev/null 2>&1; then
+            echo "Release v1.0.0 already exists; leaving it unchanged."
+          else
+            gh release create v1.0.0 dist/BrenOS-1.0-Windows11.zip dist/SHA256SUMS.txt \
+              --target "$GITHUB_SHA" --title "BrenOS 1.0 — Premium Branding" \
+              --notes-file docs/RELEASE_NOTES.md
+          fi
