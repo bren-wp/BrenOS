@@ -1,0 +1,202 @@
+[
+  {
+    "name": "computer",
+    "path": "M10 13h44v31H10zM21 52h22M32 44v8"
+  },
+  {
+    "name": "explorer",
+    "path": "M8 21V15h19l7 7h22v28H8zM8 29h48"
+  },
+  {
+    "name": "folder",
+    "path": "M8 22v-7h20l6 7h22v28H8z"
+  },
+  {
+    "name": "downloads",
+    "path": "M32 8v38m-12-12 12 12 12-12M10 53v5h44v-5"
+  },
+  {
+    "name": "pictures",
+    "path": "M8 12h48v40H8zM8 46l16-15 10 9 8-9 14 15"
+  },
+  {
+    "name": "music",
+    "path": "M25 43V16l27-7v34M25 20l27-7M17 44l8-1M44 45l8-2"
+  },
+  {
+    "name": "videos",
+    "path": "M8 12h48v40H8zM26 23l16 9-16 9z"
+  },
+  {
+    "name": "settings",
+    "path": "M32 8v8m0 32v8M8 32h8m32 0h8M16 16l6 6m20 20 6 6M48 16l-6 6M22 42l-6 6M21 32a11 11 0 1 0 22 0 11 11 0 1 0-22 0"
+  },
+  {
+    "name": "browser",
+    "path": "M32 7a25 25 0 1 0 0 50 25 25 0 0 0 0-50M7 32h50M32 7c-18 16-18 34 0 50M32 7c18 16 18 34 0 50"
+  },
+  {
+    "name": "terminal",
+    "path": "M8 12h48v40H8zM17 25l9 8-9 8M32 42h15"
+  },
+  {
+    "name": "updates",
+    "path": "M54 25A23 23 0 0 0 12 20M10 9v12h12M10 39a23 23 0 0 0 42 5M54 55V43H42"
+  },
+  {
+    "name": "security",
+    "path": "M32 5l21 8v17c0 13-7 21-21 29C18 51 11 43 11 30V13zM22 33l7 6 14-16"
+  },
+  {
+    "name": "wifi",
+    "path": "M7 25q25-25 50 0M15 34q17-17 34 0M23 43q9-9 18 0M32 51v1"
+  },
+  {
+    "name": "cloud",
+    "path": "M18 50C2 48 5 26 19 24 24 4 49 10 50 24c14 1 13 26-3 26z"
+  },
+  {
+    "name": "search",
+    "path": "M26 8a18 18 0 1 0 0 36 18 18 0 0 0 0-36M40 40l18 18"
+  },
+  {
+    "name": "apps",
+    "path": "M9 9h19v19H9zM36 9h19v19H36zM9 36h19v19H9zM36 36h19v19H36z"
+  },
+  {
+    "name": "mail",
+    "path": "M8 16h48v34H8zM8 20l24 20 24-20"
+  },
+  {
+    "name": "calculator",
+    "path": "M17 7h30v50H17zM22 13h20v10H22zM23 33h5m10 0h4M23 42h5m10 0h4M23 50h5"
+  },
+  {
+    "name": "notes",
+    "path": "M14 7h37v50H14zM22 21h21M22 31h21M22 41h14"
+  },
+  {
+    "name": "camera",
+    "path": "M8 22h12l6-8h12l6 8h12v31H8zM32 26a10 10 0 1 0 0 20 10 10 0 0 0 0-20"
+  },
+  {
+    "name": "games",
+    "path": "M18 26h28c12 0 15 25 8 26-6 1-11-9-18-9h-8c-7 0-12 10-18 9-7-1-4-26 8-26zM20 36h12M26 30v12M44 34v4"
+  },
+  {
+    "name": "calendar",
+    "path": "M10 13h44v42H10zM10 26h44M20 9v12M44 9v12M20 37h6M36 37h6"
+  },
+  {
+    "name": "recycle",
+    "path": "M17 19h30l-3 36H20zM13 19h38M24 13h16M26 26v19M38 26v19"
+  },
+  {
+    "name": "power",
+    "path": "M32 7v27M18 16a23 23 0 1 0 28 0"
+  },
+  {
+    "name": "lock",
+    "path": "M13 28h38v29H13zM21 28v-9a11 11 0 0 1 22 0v9M32 40v6"
+  },
+  {
+    "name": "user",
+    "path": "M32 9a12 12 0 1 0 0 24 12 12 0 0 0 0-24M11 56c0-26 42-26 42 0"
+  },
+  {
+    "name": "network",
+    "path": "M8 8h16v16H8zM40 8h16v16H40zM24 42h16v16H24zM16 24v10h32V24M32 34v8"
+  },
+  {
+    "name": "performance",
+    "path": "M8 53h48M12 43l12-14 10 8 17-23M46 14h5v5"
+  },
+  {
+    "name": "bluetooth",
+    "path": "M31 7v50l17-14-32-26M16 47l32-26L31 7"
+  },
+  {
+    "name": "display",
+    "path": "M7 10h50v37H7zM32 47v10M20 57h24"
+  },
+  {
+    "name": "printer",
+    "path": "M17 23V8h30v15M17 46H9V25h46v21h-8M17 40h30v16H17z"
+  },
+  {
+    "name": "backup",
+    "path": "M14 24a21 21 0 1 1-1 17M13 12v14h14M32 20v14l9 7"
+  },
+  {
+    "name": "help",
+    "path": "M32 7a25 25 0 1 0 0 50 25 25 0 0 0 0-50M24 23c2-11 19-11 19 1 0 10-11 8-11 16M32 49v2"
+  },
+  {
+    "name": "clock",
+    "path": "M32 8a24 24 0 1 0 0 48 24 24 0 0 0 0-48M32 16v17l13 7"
+  },
+  {
+    "name": "archive",
+    "path": "M10 10h44v13H10zM13 23v30h38V23M24 34h16"
+  },
+  {
+    "name": "document",
+    "path": "M15 7h24l11 12v38H15zM39 7v12h11M22 32h20M22 41h20"
+  },
+  {
+    "name": "pdf",
+    "path": "M15 7h25l10 12v38H15zM40 7v12h10M21 46l8-17 7 11 6-11"
+  },
+  {
+    "name": "database",
+    "path": "M11 14c0-11 42-11 42 0v35c0 12-42 12-42 0zM11 14c0 11 42 11 42 0M11 31c0 11 42 11 42 0"
+  },
+  {
+    "name": "code",
+    "path": "M8 10h48v44H8zM24 24l-8 9 8 9M40 24l8 9-8 9M36 19l-8 28"
+  },
+  {
+    "name": "store",
+    "path": "M11 24h42l-3 31H14zM18 24V11h28v13M25 38v7m14-7v7"
+  },
+  {
+    "name": "heart",
+    "path": "M32 54L12 35C-1 21 17 5 32 22 47 5 65 21 52 35z"
+  },
+  {
+    "name": "link",
+    "path": "M23 41h-5a14 14 0 0 1 0-28h13a14 14 0 0 1 0 28h-1M41 23h5a14 14 0 0 1 0 28H33a14 14 0 0 1 0-28h1"
+  },
+  {
+    "name": "brightness",
+    "path": "M32 20a12 12 0 1 0 0 24 12 12 0 0 0 0-24M32 5v10M32 49v10M5 32h10m34 0h10M13 13l8 8m22 22 8 8M51 13l-8 8M21 43l-8 8"
+  },
+  {
+    "name": "volume",
+    "path": "M8 25h11l16-13v40L19 39H8zM43 23c8 4 8 15 0 19M49 16c14 8 14 25 0 33"
+  },
+  {
+    "name": "keyboard",
+    "path": "M6 14h52v38H6zM14 23h5m7 0h5m7 0h5M14 32h5m7 0h5m7 0h5M18 42h28"
+  },
+  {
+    "name": "pointer",
+    "path": "M12 5v49l13-14 9 19 8-4-9-18h20z"
+  },
+  {
+    "name": "info",
+    "path": "M32 8a24 24 0 1 0 0 48 24 24 0 0 0 0-48M32 29v17M32 19v1"
+  },
+  {
+    "name": "shield",
+    "path": "M32 6l19 7v16c0 13-7 21-19 28C20 50 13 42 13 29V13z"
+  },
+  {
+    "name": "install",
+    "path": "M13 44h38v11H13zM32 8v29M19 24l13 13 13-13"
+  },
+  {
+    "name": "uninstall",
+    "path": "M13 44h38v11H13zM32 36V8M19 21L32 8l13 13"
+  }
+]
